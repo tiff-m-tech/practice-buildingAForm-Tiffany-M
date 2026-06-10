@@ -1,0 +1,96 @@
+<!-- Instructions
+Imagine you are building a feedback form for a website. The form should collect the
+following details from the user:
+○ Full Name (Text Input)
+○ Email Address (Email Input)
+○ Password (Password Input for account verification)
+○ Feedback Category (Dropdown/Select Input)
+○ Preferred Contact Method (Radio Buttons)
+○ Additional Features of Interest (Checkboxes)
+○ Comments (Textarea)
+○ Submit Button (to send the data)
+
+Requirements:
+○ Use appropriate <label> elements for each input to improve
+accessibility.
+○ Group related inputs using <fieldset> and <legend>.
+○ Add placeholder text to guide users where applicable.
+○ Ensure required fields are marked using the required attribute.
+
+Bonus Challenge:
+○ Include validation attributes like maxlength, minlength, or pattern
+where applicable.
+○ Add the checked or selected attribute to provide default selections. -->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Form</title>
+    </head>
+    <body>
+        <form action="/submit" method="post">
+            <fieldset>
+                <legend>Sign Up Form</legend>
+                <!-- NAME -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Full Name..." minlength="4" maxlength="30" required />
+                <br />
+                <!-- EMAIL -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
+                <br />
+                <!-- PASSWORD -->
+                <label for="password">Password:</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="password"
+                    minlength="8"
+                    maxlength="20"
+                    pattern="(?=.*[A-Za-z])(?=.*\d).{8,20}"
+                    title="Password must be 8-20 characters and include at least one letter and one number."
+                    required
+                />
+            </fieldset>
+            <fieldset>
+                <!-- CHECKBOX -->
+                <legend>Select Your Interests:</legend>
+                <label for="coding"> <input type="checkbox" id="coding" name="interests" value="coding" checked /> Coding </label>
+                <label for="design"> <input type="checkbox" id="design" name="interests" value="design" /> Design </label>
+                <label for="neither"> <input type="checkbox" id="neither" name="neigther" value="design" /> Neither </label>
+            </fieldset>
+            <fieldset>
+                <legend>Feedback / Comments</legend>
+                <!-- DROPDOWN -->
+                <label for="feedback">Feedback:</label>
+                <select id="feedback" name="feedback">
+                    <option value="positive" selected>Awesome!</option>
+                    <option value="neutral">Middle Ground</option>
+                    <option value="negative">Dreadful</option>
+                </select>
+                <br />
+                <!-- RADIO -->
+                <span>Preferred Contact Method:</span>
+                <label for="email-contact"> <input type="radio" id="email-contact" name="contact" value="email" checked required /> Email </label>
+                <label for="phone-contact"> <input type="radio" id="phone-contact" name="contact" value="phone" /> Phone </label>
+                <br />
+                <!-- TEXTAREA -->
+                <label for="message">Comments:</label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    cols="50"
+                    placeholder="Please let us know if you have additional comments."
+                    maxlength="500"
+                ></textarea>
+            </fieldset>
+            <!-- SUBMIT -->
+            <input type="submit" value="Submit" />
+        </form>
+    </body>
+</html>
