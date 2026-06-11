@@ -1,3 +1,7 @@
+h1 {
+    margin: 0 30px;
+}
+
 fieldset {
     max-width: 400px;
     margin: 30px;
