@@ -5,7 +5,8 @@ fieldset {
 
 input,
 select,
-textarea {
+textarea,
+button {
     margin: 15px 0;
     padding: 5px;
 }
@@ -14,6 +15,7 @@ textarea {
     display: block;
 }
 
-input[type="submit"] {
+input[type="submit"],
+button {
     margin: 0 20px 0 30px;
 }

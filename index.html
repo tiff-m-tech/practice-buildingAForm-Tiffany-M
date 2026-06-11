@@ -28,10 +28,11 @@ where applicable.
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles.css" />
-        <title>Form</title>
+        <title>Form Practice</title>
     </head>
     <body>
-        <form action="/submit" method="post">
+        <form action="./submitted.html" method="get">
+            <!-- Should be using "post" for the method, using "get" for demo purposen -->
             <fieldset>
                 <legend>Sign Up Form</legend>
                 <!-- NAME -->
@@ -41,6 +42,10 @@ where applicable.
                 <!-- EMAIL -->
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="example@gmail.com" required />
+                <br />
+                <!-- EXTRA - PHONE NUMER -->
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" name="phone-number" placeholder="610-8675-309" required />
                 <br />
                 <!-- PASSWORD -->
                 <label for="password">Password:</label>
@@ -69,7 +74,7 @@ where applicable.
                 <label for="feedback">Feedback:</label>
                 <select id="feedback" name="feedback">
                     <option value="positive" selected>Awesome!</option>
-                    <option value="neutral">Middle Ground</option>
+                    <option value="neutral">Just OK</option>
                     <option value="negative">Dreadful</option>
                 </select>
                 <br />
@@ -91,6 +96,8 @@ where applicable.
             </fieldset>
             <!-- SUBMIT -->
             <input type="submit" value="Submit" />
+            <!-- EXTRA RESET BUTTON -->
+            <button id="reset" type="reset">Reset</button>
         </form>
     </body>
 </html>
